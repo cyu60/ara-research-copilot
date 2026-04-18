@@ -2,9 +2,9 @@
 
 Single-agent example from the [Ara Hackathon Tour 2026](https://github.com/cyu60/ara-ai-computer) — a chat-based research copilot running on the [Ara](https://ara.so) agentic operating system.
 
-**Links:** [Ara docs](https://docs.ara.so/introduction) · [Ara Hackathon Tour](https://github.com/cyu60/ara-ai-computer) · [DayDreamers](https://daydreamers.club)
+**Links:** [Ara docs](https://docs.ara.so/introduction) · [Ara Hackathon Tour](https://github.com/cyu60/ara-ai-computer) · [DayDreamers](https://daydreamers.live)
 
-Part of the **Aragrams** — reference projects built by [DayDreamers](https://daydreamers.club) to show what's possible with agent-first development.
+Part of the **Aragrams** — reference projects built by [DayDreamers](https://daydreamers.live) to show what's possible with agent-first development.
 
 ## What it does
 
