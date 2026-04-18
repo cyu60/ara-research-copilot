@@ -271,7 +271,9 @@
   .messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
   .msg {
-    max-width: 640px;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
     animation: fade-up 0.3s ease-out;
   }
 
@@ -280,8 +282,8 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .msg.assistant { align-self: flex-start; }
-  .msg.user { align-self: flex-end; }
+  .msg.user { align-self: flex-end; align-items: flex-end; }
+  .msg.assistant { align-self: flex-start; align-items: flex-start; }
 
   .msg-meta {
     font-family: 'DM Mono', monospace;
@@ -299,8 +301,12 @@
   .msg-bubble {
     padding: 0.85rem 1.15rem;
     border-radius: var(--radius);
-    font-size: 0.88rem;
-    line-height: 1.7;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    max-width: 100%;
+    width: fit-content;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
   }
 
   .msg.assistant .msg-bubble {
