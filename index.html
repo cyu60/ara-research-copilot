@@ -438,16 +438,25 @@
   }
 
   .welcome-icon {
-    width: 56px;
-    height: 56px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
   }
 
-  .welcome-icon img {
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
+  .brand-mark {
+    background: linear-gradient(135deg, var(--accent) 0%, #4a6aff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 10px 28px rgba(28,63,220,0.22), 0 2px 6px rgba(28,63,220,0.08);
   }
+  .brand-mark.lg { width: 84px; height: 84px; border-radius: 22px; }
+  .brand-mark.lg svg { width: 42px; height: 42px; }
+  .brand-mark.sm {
+    width: 30px; height: 30px; border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(28,63,220,0.25);
+  }
+  .brand-mark.sm svg { width: 17px; height: 17px; }
+  .brand-mark svg { fill: #fff; }
 
   .welcome h3 {
     font-family: 'DM Serif Display', serif;
@@ -471,29 +480,45 @@
 
   .welcome-suggestions {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 0.55rem;
     margin-top: 1.75rem;
-    justify-content: center;
-    max-width: 520px;
+    align-items: center;
+    width: 100%;
+    max-width: 420px;
   }
 
   .suggestion {
     background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 0.5rem 1rem;
-    font-size: 0.78rem;
-    color: var(--muted);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 0.85rem 1.05rem;
+    font-size: 0.84rem;
+    color: var(--fg);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: border-color .18s, box-shadow .18s, transform .15s;
     font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    line-height: 1.45;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    width: 100%;
+    max-width: 380px;
   }
-
+  .suggestion::before {
+    content: '›';
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
   .suggestion:hover {
     border-color: var(--accent);
-    color: var(--accent);
-    background: var(--accent-light);
+    box-shadow: 0 4px 14px rgba(28,63,220,0.10);
+    transform: translateY(-1px);
   }
 
   /* --- Error toast --- */
@@ -533,10 +558,10 @@
   <div class="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-logo">
-        <img src="logo.png" alt="DayDreamers">
-        <span>DayDreamers</span>
+        <div class="brand-mark sm"><svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg></div>
+        <span>Research Copilot</span>
       </div>
-      <div class="sidebar-tagline">Ara AI Computer</div>
+      <div class="sidebar-tagline">Aragram · DayDreamers</div>
     </div>
 
     <div class="sidebar-label">Agents</div>
@@ -558,9 +583,9 @@
 
     <div class="messages" id="messages">
       <div class="welcome" id="welcome">
-        <div class="welcome-icon"><img src="logo.png" alt=""></div>
-        <h3>Your AI <em>Computer</em></h3>
-        <p>Pick an agent from the sidebar — each one is a specialized workflow running on Ara's cloud runtime with its own sandbox, memory, and tools.</p>
+        <div class="welcome-icon"><div class="brand-mark lg"><svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg></div></div>
+        <h3>Your <em>Research Copilot</em></h3>
+        <p>Web research → markdown briefs → quizzes. Build a knowledge base you'll actually remember.</p>
         <div class="welcome-suggestions" id="suggestions"></div>
       </div>
     </div>
