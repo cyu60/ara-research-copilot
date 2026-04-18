@@ -1,0 +1,7 @@
+.venv/
+.env
+.runtime-key.local
+__pycache__/
+*.pyc
+.vercel
+.gstack/
