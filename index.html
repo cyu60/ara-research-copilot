@@ -574,9 +574,9 @@
     <div class="input-area">
       <div class="input-row">
         <div class="input-wrap">
-          <textarea id="input" placeholder="Message the agent..." rows="1" disabled></textarea>
+          <textarea id="input" placeholder="Message the agent..." rows="1"></textarea>
         </div>
-        <button class="send-btn" id="sendBtn" disabled>Send</button>
+        <button class="send-btn" id="sendBtn">Send</button>
       </div>
       <div class="input-hint">
         <span><kbd>Enter</kbd> to send &middot; <kbd>Shift+Enter</kbd> new line</span>
@@ -739,6 +739,7 @@ inputEl.addEventListener('keydown', e => {
 });
 sendBtn.addEventListener('click', send);
 renderSidebar();
+if (AGENTS.length >= 1) { selectAgent(AGENTS[0].id); inputEl.focus(); }
 </script>
 </body>
 </html>
